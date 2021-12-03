@@ -11,6 +11,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Checkout from './pages/Checkout';
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
   return (
@@ -26,6 +27,7 @@ const App = () => {
           path="/register"
           element={user ? <Navigate to="/" /> : <Register />}
         />
+        <Route path="/orders" element={<Checkout />} />
       </Routes>
     </Router>
   );

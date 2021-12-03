@@ -5,10 +5,12 @@ import Footer from '../components/Footer';
 import styled from 'styled-components';
 import { Add, Remove } from '@material-ui/icons';
 import { mobile } from '../responsive';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LoggedIn from '../components/LoggedIn';
 import { useNavigate } from 'react-router';
 import { useEffect } from 'react';
+import { order } from '../redux/apiCalls';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -148,10 +150,6 @@ const Cart = () => {
         <Title>YOUR BAG</Title>
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist(0)</TopText>
-          </TopTexts>
           <TopButton type="filled">CHECKOUT</TopButton>
         </Top>
         <Bottom>
@@ -208,7 +206,9 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>Rs {cart.total}</SummaryItemPrice>
             </SummaryItem>
-            <SummaryButton>CHECKOUT</SummaryButton>
+            <Link to="/orders">
+              <SummaryButton>CHECKOUT</SummaryButton>
+            </Link>
           </Summary>
         </Bottom>
       </Wrapper>

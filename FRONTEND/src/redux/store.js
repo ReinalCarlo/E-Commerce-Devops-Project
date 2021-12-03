@@ -18,7 +18,10 @@ const persistConfig = {
   storage,
 };
 
-const rootreducer = combineReducers({ user: userReducer, cart: cartReducer });
+const rootreducer = combineReducers({
+  user: userReducer,
+  cart: cartReducer,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootreducer);
 

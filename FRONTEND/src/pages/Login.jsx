@@ -67,13 +67,15 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>SIGN IN</Title>
+        <Title data-testid="login">SIGN IN</Title>
         <Form>
           <Input
+            id="username"
             placeholder="username"
             onChange={(e) => setUsername(e.target.value)}
           />
           <Input
+            id="password"
             placeholder="password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}

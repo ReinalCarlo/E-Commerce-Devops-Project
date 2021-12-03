@@ -44,9 +44,12 @@ const Right = styled.div`
   ${mobile({ flex: 1.6, justifyContent: 'center' })}
 `;
 const MenuItem = styled.div`
+  display: flex;
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  background-color: white;
+  color: black;
   ${mobile({ fontSize: '12px', marginLeft: '8px' })}
 `;
 
@@ -60,6 +63,14 @@ const Wrapper = styled.div`
 const Input = styled.input`
   border: none;
   ${mobile({ width: '45px ' })}
+`;
+const Button = styled.button`
+  border: none;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
 `;
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
@@ -79,10 +90,10 @@ const Navbar = () => {
         </Center>
         <Right>
           <Link to="/register">
-            <MenuItem>REGISTER</MenuItem>
+            <Button>REGISTER</Button>
           </Link>
           <Link to="/login">
-            <MenuItem>SIGN IN</MenuItem>
+            <Button>SIGN IN</Button>
           </Link>
           <Link to="/cart">
             <MenuItem>
