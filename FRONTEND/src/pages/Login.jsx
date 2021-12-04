@@ -83,7 +83,7 @@ const Login = () => {
           <Button onClick={handleClick} disabled={isFetching}>
             LOGIN
           </Button>
-          {error && <Error>Something went wrong...</Error>}
+
           <MenuItem>FORGOT PASSWORD?</MenuItem>
           <Link to="/register">
             <MenuItem>CREATE A NEW ACCOUNT</MenuItem>
