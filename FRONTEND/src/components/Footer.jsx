@@ -89,6 +89,8 @@ const Footer = () => {
       </Center>
       <Right>
         <Title>Contact</Title>
+        <Desc>Dayananda Sagar College Of Engineering</Desc>
+        <Desc>Banglore-56019</Desc>
       </Right>
     </Container>
   );

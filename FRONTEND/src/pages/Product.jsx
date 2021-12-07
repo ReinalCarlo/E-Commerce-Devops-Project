@@ -138,7 +138,6 @@ const Product = () => {
   return (
     <Container>
       {user ? <LoggedIn /> : <Navbar />}
-      <Announcement />
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
@@ -177,7 +176,7 @@ const Product = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      <Newsletter />
+
       <Footer />
     </Container>
   );

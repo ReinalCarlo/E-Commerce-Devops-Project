@@ -84,53 +84,54 @@ const Register = () => {
   return (
     <Container>
       <Wrapper>
-        <Title> CREATE AN ACCOUNT </Title>{' '}
+        <Title>CREATE AN ACCOUNT</Title>
         <Form>
           <Input
             placeholder="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-          />{' '}
+          />
           <Input
             placeholder="last name"
             value={lastname}
             onChange={(e) => setLastname(e.target.value)}
-          />{' '}
+          />
           <Input
             placeholder="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-          />{' '}
+          />
           <Input
             type="email"
             placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          />{' '}
+          />
           <Input
             type="password"
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />{' '}
+          />
           <Input
             type="password"
             placeholder="confirm password"
             value={confirmpass}
             onChange={(e) => setConfirmpass(e.target.value)}
-          />{' '}
+          />
           <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b> PRIVACY POLICY </b>{' '}
-          </Agreement>{' '}
+            By creating an account,I consent to the processing of my personal
+            data in accordance with the <b>PRIVACY POLICY</b>
+          </Agreement>
           <Button onClick={handleClick} disabled={isFetching}>
-            CREATE{' '}
-          </Button>{' '}
-          <Link to="/login">
-            <MenuItem> ALREADY HAVE AN ACCOUNT </MenuItem>{' '}
-          </Link>{' '}
-        </Form>{' '}
-      </Wrapper>{' '}
+            CREATE
+          </Button>
+
+          <Link to="/login" style={{ textDecoration: 'none' }}>
+            <MenuItem>ALREADY HAVE AN ACCOUNT</MenuItem>
+          </Link>
+        </Form>
+      </Wrapper>
     </Container>
   );
 };

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { order } from '../redux/apiCalls';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 const Container = styled.div`
   width: 100vw;
   height: 100vh;

@@ -53,7 +53,6 @@ const ProductList = () => {
   return (
     <Container>
       {user ? <LoggedIn /> : <Navbar />}
-      <Announcement />
       <Title>Men's Footwear</Title>
       <FilterContainer>
         <Filter>
@@ -87,7 +86,6 @@ const ProductList = () => {
         </Filter>
       </FilterContainer>
       <Products cat={cat} filters={filters} sort={sort} />
-      <Newsletter />
       <Footer />
     </Container>
   );

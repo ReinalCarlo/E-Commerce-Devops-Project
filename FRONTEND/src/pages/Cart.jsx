@@ -145,12 +145,11 @@ const Cart = () => {
   return (
     <Container>
       {user ? <LoggedIn /> : <Navbar />}
-      <Announcement />
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopButton type="filled">CHECKOUT</TopButton>
+          <TopButton type="filled">EMPTY CART</TopButton>
         </Top>
         <Bottom>
           <Info>

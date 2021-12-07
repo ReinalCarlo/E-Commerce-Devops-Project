@@ -34,9 +34,12 @@ const Input = styled.input`
   padding: 10px;
 `;
 const MenuItem = styled.div`
-  font-size: 12px;
-  flex: 1;
+  border: none;
+  padding: 10px;
+  background-color: white;
+  color: black;
   cursor: pointer;
+  font-size: 12px;
 `;
 const Button = styled.button`
   width: 40%;
@@ -58,7 +61,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  const { isFetching, error } = useSelector((state) => state.user);
+  const { isFetching } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -67,7 +70,7 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
-        <Title data-testid="login">SIGN IN</Title>
+        <Title data-testid="login">LOG IN</Title>
         <Form>
           <Input
             id="username"
@@ -85,7 +88,7 @@ const Login = () => {
           </Button>
 
           <MenuItem>FORGOT PASSWORD?</MenuItem>
-          <Link to="/register">
+          <Link to="/register" style={{ textDecoration: 'none' }}>
             <MenuItem>CREATE A NEW ACCOUNT</MenuItem>
           </Link>
         </Form>
