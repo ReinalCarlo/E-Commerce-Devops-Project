@@ -87,7 +87,7 @@ const Logout = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>DevOps</Logo>
+          <Logo>Style Walks</Logo>
         </Center>
         <Right>
           <MenuItem>Hello {user.username}</MenuItem>
