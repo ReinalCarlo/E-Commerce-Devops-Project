@@ -70,7 +70,7 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
-        <Title data-testid="LOG IN">LOG IN</Title>
+        <Title data-testid="LOG">LOG IN</Title>
         <Form>
           <Input
             id="username"
