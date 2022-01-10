@@ -13,6 +13,6 @@ async function example() {
       return value;
     });
 
-  assert.strictEqual(signin, 'SIGN IN');
+  assert.strictEqual(signin, 'LOG IN');
 }
 example();
