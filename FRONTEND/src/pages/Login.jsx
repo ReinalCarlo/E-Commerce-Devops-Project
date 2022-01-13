@@ -87,7 +87,7 @@ const Login = () => {
             LOGIN
           </Button>
 
-          <MenuItem>FORGOT PASSWORD?</MenuItem>
+          <MenuItem>Forgot password?</MenuItem>
           <Link to="/register" style={{ textDecoration: 'none' }}>
             <MenuItem>CREATE A NEW ACCOUNT</MenuItem>
           </Link>
