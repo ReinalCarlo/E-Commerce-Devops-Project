@@ -25,17 +25,13 @@ const Title = styled.h1`
 `;
 const Form = styled.form`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 `;
 const Input = styled.input`
   flex: 1;
   min-width: 40%;
-  margin: 20px 10px 0px 0px;
+  margin: 10px 0px;
   padding: 10px;
-`;
-const Agreement = styled.span`
-  font-size: 12px;
-  margin: 20px 0px;
 `;
 const Button = styled.button`
   width: 40%;
@@ -44,6 +40,7 @@ const Button = styled.button`
   background-color: teal;
   color: white;
   cursor: pointer;
+  margin-bottom: 20px;
 `;
 const MenuItem = styled.div`
   font-size: 12px;
@@ -81,7 +78,9 @@ const Checkout = () => {
             value={billingaddress}
             onChange={(e) => setBillingaddress(e.target.value)}
           />
-          <Button>ORDER</Button>
+          <Link to="/success" style={{ textDecoration: 'none' }}>
+            <Button>ORDER</Button>
+          </Link>
         </Form>
       </Wrapper>
     </Container>

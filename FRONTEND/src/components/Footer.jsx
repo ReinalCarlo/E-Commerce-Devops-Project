@@ -58,7 +58,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>DevOps</Logo>
+        <Logo>Style Walks</Logo>
         <Desc>We have Footwear of many brands for everybody!!</Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
