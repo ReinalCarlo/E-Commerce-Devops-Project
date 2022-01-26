@@ -78,7 +78,9 @@ const Checkout = () => {
             value={billingaddress}
             onChange={(e) => setBillingaddress(e.target.value)}
           />
-          <Button>ORDER</Button>
+          <Link to="/success" style={{ textDecoration: 'none' }}>
+            <Button>ORDER</Button>
+          </Link>
         </Form>
       </Wrapper>
     </Container>
