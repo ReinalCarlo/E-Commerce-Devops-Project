@@ -4,15 +4,15 @@ const assert = require('assert');
 async function example() {
   const driver = await new Builder().forBrowser('chrome').build();
 
-  await driver.get('http://localhost:3000');
+  await driver.get('http://localhost:3000/product/61c0b02fc2b9114994568faa');
 
-  let home = await driver
-    .findElement(By.className('sc-bBHxTw bBgOcG'))
+  let women = await driver
+    .findElement(By.className('sc-hjGZqJ grvjoS'))
     .getText()
     .then(function (value) {
       return value;
     });
 
-  assert.strictEqual(home, 'Style Walks');
+  assert.strictEqual(women, 'PUMA kids slippers');
 }
 example();
