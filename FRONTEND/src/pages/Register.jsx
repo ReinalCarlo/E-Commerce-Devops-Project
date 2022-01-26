@@ -87,33 +87,39 @@ const Register = () => {
         <Title>Create an account</Title>
         <Form>
           <Input
+            id="name"
             placeholder="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <Input
+            id="lastname"
             placeholder="last name"
             value={lastname}
             onChange={(e) => setLastname(e.target.value)}
           />
           <Input
+            id="username"
             placeholder="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <Input
+            id="email"
             type="email"
             placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <Input
+            id="password"
             type="password"
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <Input
+            id="conpassword"
             type="password"
             placeholder="confirm password"
             value={confirmpass}

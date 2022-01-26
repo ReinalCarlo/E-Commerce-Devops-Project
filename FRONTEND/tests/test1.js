@@ -6,6 +6,7 @@ async function example() {
   await driver.get('http://localhost:3000/login');
 
   await driver.findElement(By.id('username')).sendKeys('Admin');
+  await driver.sleep(2000);
   await driver.findElement(By.id('password')).sendKeys('12345', Key.RETURN);
 }
 example();

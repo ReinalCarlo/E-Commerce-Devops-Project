@@ -53,7 +53,7 @@ const ProductList = () => {
   return (
     <Container>
       {user ? <LoggedIn /> : <Navbar />}
-      <Title>Men's Footwear</Title>
+      <Title>Footwear</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
@@ -68,6 +68,10 @@ const ProductList = () => {
           </Select>
           <Select name="size" onChange={handleFilters}>
             <Option disabled>Size</Option>
+            <Option>3</Option>
+            <Option>4</Option>
+            <Option>5</Option>
+            <Option>6</Option>
             <Option>7</Option>
             <Option>8</Option>
             <Option>9</Option>

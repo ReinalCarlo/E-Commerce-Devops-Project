@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Checkout from './pages/Checkout';
+import Success from './pages/Success';
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
   return (
@@ -28,6 +29,7 @@ const App = () => {
           element={user ? <Navigate to="/" /> : <Register />}
         />
         <Route path="/orders" element={<Checkout />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
     </Router>
   );
