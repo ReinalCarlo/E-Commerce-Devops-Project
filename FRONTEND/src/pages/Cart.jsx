@@ -206,7 +206,7 @@ const Cart = () => {
               <SummaryItemPrice>Rs {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <Link to="/orders">
-              <SummaryButton>Checkout</SummaryButton>
+              <SummaryButton>CHECKOUT</SummaryButton>
             </Link>
           </Summary>
         </Bottom>
