@@ -52,7 +52,7 @@ const Login = () => {
           <MenuItem>Thank you for using our service</MenuItem>
           <Link to="/login" style={{ textDecoration: 'none' }}>
             <MenuItem onClick={handleClick}>shop more!</MenuItem>
-            <MenuItem>click here to continue shopping!!</MenuItem>
+            <MenuItem>click here to shop again</MenuItem>
           </Link>
         </Form>
       </Wrapper>
