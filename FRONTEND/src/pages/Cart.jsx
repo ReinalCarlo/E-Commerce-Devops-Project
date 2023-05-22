@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router';
 import { useEffect } from 'react';
 import { order } from '../redux/apiCalls';
 import { Link } from 'react-router-dom';
+import { cartempty } from '../redux/cartRedux';
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -131,7 +132,14 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user.currentUser);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const handleContinueShopping = () => {
+    navigate('/');
+  };
+  const handleEmptyCart=()=>{
+    dispatch(cartempty());
+  }
   useEffect(() => {
     const makeRequest = async () => {
       try {
@@ -148,8 +156,8 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopButton type="filled">EMPTY CART</TopButton>
+          <TopButton onClick={handleContinueShopping}> CONTINUE SHOPPING </TopButton>
+          <TopButton type="filled" onClick={handleEmptyCart}>EMPTY CART</TopButton>
         </Top>
         <Bottom>
           <Info>
@@ -162,10 +170,7 @@ const Cart = () => {
                       <b>Product:</b>
                       {product.title}
                     </ProductName>
-                    <ProductId>
-                      <b>ID:</b>
-                      {product._id}
-                    </ProductId>
+                   
                     <ProductColor color={product.color} />
                     <ProductSize>
                       <b>Size:</b>

@@ -4,7 +4,6 @@ import { login } from '../redux/apiCalls';
 import { mobile } from '../responsive';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 const Container = styled.div`
   width: 100vw;
   height: 100vh;

@@ -114,16 +114,20 @@ const Product = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // Fetch product data based on the id from the URL path
     const getProducts = async () => {
       try {
         const res = await axios.get(`/products/find/` + id);
         setProduct(res.data);
-      } catch (err) {}
+      } catch (err) {
+        // Handle error
+      }
     };
     getProducts();
   }, [id]);
 
   const handleQuantity = (type) => {
+    // Update quantity based on the button type (increment or decrement)
     if (type === 'dec') {
       quantity > 1 && setQuantity(quantity - 1);
     } else {
@@ -132,9 +136,12 @@ const Product = () => {
   };
 
   const handleClick = () => {
+    // Dispatch addProduct action with the selected product details
     dispatch(addProduct({ ...product, quantity, color, size }));
   };
+
   const user = useSelector((state) => state.user.currentUser);
+
   return (
     <Container>
       {user ? <LoggedIn /> : <Navbar />}
@@ -149,6 +156,7 @@ const Product = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
+              {/* Render color filters */}
               {product.color?.map((c) => (
                 <FilterColor
                   color={c}
@@ -159,6 +167,7 @@ const Product = () => {
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
+              {/* Render size filters */}
               <Filtersize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FiltersizeOption key={s}>{s}</FiltersizeOption>
@@ -168,10 +177,12 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
+              {/* Handle quantity change */}
               <Remove onClick={() => handleQuantity('dec')} />
               <Amount>{quantity}</Amount>
               <Add onClick={() => handleQuantity('inc')} />
             </AmountContainer>
+            {/* Add to cart button */}
             <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
