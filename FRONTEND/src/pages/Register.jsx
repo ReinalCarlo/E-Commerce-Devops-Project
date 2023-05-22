@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../redux/apiCalls';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+//import React, { useState, useEffect } from 'react';
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -64,12 +66,15 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmpass, setConfirmpass] = useState('');
   const dispatch = useDispatch();
-  const { isFetching, error } = useSelector((state) => state.user);
+  const { isFetching, Error } = useSelector((state) => state.user);
+
+  
 
   const handleClick = (e) => {
     e.preventDefault();
     if (password !== confirmpass) {
-      <Error />;
+      // Passwords don't match
+      return;
     }
     register(dispatch, {
       name,
@@ -80,6 +85,13 @@ const Register = () => {
       confirmpass,
     });
   };
+
+  useEffect(() => {
+    if (Error) {
+      window.alert('Already registered'); // Display alert message
+    }
+  }, [Error]);
+
 
   return (
     <Container>
@@ -129,12 +141,14 @@ const Register = () => {
             By creating an account,I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
+          
           <Button onClick={handleClick} disabled={isFetching}>
             CREATE
           </Button>
 
           <Link to="/login" style={{ textDecoration: 'none' }}>
-            <MenuItem>ALREADY HAVE AN ACCOUNT</MenuItem>
+             <MenuItem>ALREADY HAVE AN ACCOUNT</MenuItem> 
+           
           </Link>
         </Form>
       </Wrapper>
